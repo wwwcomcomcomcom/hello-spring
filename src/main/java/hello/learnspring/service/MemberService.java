@@ -2,8 +2,6 @@ package hello.learnspring.service;
 
 import hello.learnspring.domain.Member;
 import hello.learnspring.repository.MemberRepository;
-import hello.learnspring.repository.MemoryMemberRepository;
-
 import java.util.List;
 import java.util.Optional;
 
