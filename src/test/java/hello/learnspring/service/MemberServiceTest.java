@@ -34,12 +34,8 @@ class MemberServiceTest {
         member2.setName("hello");
         //when
         memberService.join(member1);
-        try {
-            memberService.join(member2);
-            fail();
-        } catch (IllegalStateException e) {
-            assertThat(e.getMessage()).isEqualTo("already exists member");
-        }
+        IllegalStateException error = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        assertThat(error.getMessage()).isEqualTo("already exists member");
         //then
     }
 
